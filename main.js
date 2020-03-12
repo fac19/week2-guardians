@@ -60,7 +60,6 @@ function fetchReddit(searchTerm) {
             });
         })
 }
-// fetchReddit("kat");
 
 function makeRedditComment(authorContent, commentContent, unixTimeContent) {
     let container = makeNode('BLOCKQUOTE', 'a-class');

@@ -4,41 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a7798e1ba0.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
 <body>
 
     <h1>Movie Review Generator</h1>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus ea sed nesciunt rem laboriosam eum, at a
-        eius ut accusantium. Mollitia placeat incidunt, cumque asperiores ipsum ut quae rerum nemo.</p>
+    <p class="intro-text">See what people are saying about a movie.</p>
 
     <main>
 
         <form id="movie-form" class="movie-form" action="">
-            <label for="">
                 <input id="movie-input" class="movie-form__input " type="text">
-                <button type="submit" id="movie-submit" class="movie-form__submit">Submit</button>
-            </label>
+                <button type="submit" id="movie-submit" class="movie-form__submit"><i class="fas fa-search"></i></button>
         </form>
 
         <section class="section-movie-db">
-            <h2 class="section-movie-db section-movie-db__title ">Movie Title</h2>
-            <img class="section-movie-db section-movie-db__poster" src="" alt="">
-            <h3 class="section-movie-db section-movie-db__date">Release date</h3>
-            <blockquote class="section-movie-db section-movie-db__info">Synopsis</blockquote>
+            <img class="section-movie-db__poster" src="" alt="">
+            <h3 class="section-movie-db__title">Title</h3>
+            <h3 class="section-movie-db__date">Year</h3>
+            <p class="section-movie-db__info">Synopsis</p>
         </section>
 
-        <section id="reddit-box" class="section section--card--reddit">
-            <h2>Reddit Comments</h2>
+        <section id="reddit-box" class="reddit-box">
+        <h2 class="reddit-box__title">This on Reddit...</h2>
         </section>
     </main>
 
-    <footer class="footer footer--theme">
-        <ul>
-            <li>Link</li>
-        </ul>
-    </footer>
+    <!-- <footer class="footer footer--theme">
+        <p>A production of Team Guardians</p>
+    </footer> -->
 
     <script src="./main.js"></script>
     <script src="search.js"></script>
