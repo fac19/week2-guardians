@@ -1,51 +1,42 @@
 // MOVIE API
-function fetchRequest(movieName){
+function fetchRequest(movieName) {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=62b96ba98a33d55afab20dba768c38e2&query=${movieName}`)
-    .then(response => {
-        if (response.ok !== true) throw new Error(response.status)
-        return response.json()
-    })
-    // .then(data => console.log(data.results[0]))
-    .then(data => {
-        let firstResult = data.results[0]; //pulls up the most recent movie by targetting the first object
-        // THIS IS OUR CALLBACK. We are calling the putInTheDom function and passing our newly created 
-        // object in as an arguement to be manipulated in the DOM in a separate function
-        // so we don't have to do it in the then promise
-        // We thought it would be easier to pass through this information as an object, 
-        // rather than an array and extract the information we require
-        // console.log(firstResult);
-        putInTheDom({
-            title: firstResult.original_title,
-            movie_img: firstResult.poster_path,
-            release_date: firstResult.release_date,
-            synopsis: firstResult.overview
-        });
-    })
-    .catch(error => console.log(error))
+        .then(response => {
+            if (response.ok !== true) throw new Error(response.status)
+            return response.json()
+        })
+        .then(data => {
+            let firstResult = data.results[0]; //pulls up the most recent movie by targetting the first object
+            // THIS IS OUR CALLBACK. We are calling the putInTheDom function and passing our newly created 
+            // object in as an arguement to be manipulated in the DOM in a separate function
+            // so we don't have to do it in the then promise
+            // We thought it would be easier to pass through this information as an object, 
+            // rather than an array and extract the information we require
+            // console.log(firstResult);
+            putInTheDom({
+                title: firstResult.original_title,
+                movie_img: firstResult.poster_path,
+                release_date: firstResult.release_date,
+                synopsis: firstResult.overview
+            });
+        })
+        .catch(error => console.log(error))
 };
 
 //Created a separate function for DOM manipulation to make code easier to read
-function putInTheDom(movieObject){
-    // Here we'll manipulate the DOM
-    console.log(movieObject);
+function putInTheDom(movieObject) {
+    // Dom Manipulation
     const getTitle = document.querySelector('.section-movie-db__title');
-    // console.log(getTitle);
     const getPoster = document.querySelector('.section-movie-db__poster');
-    // console.log(getPoster);
     const getDate = document.querySelector('.section-movie-db__date');
-    // console.log(getDate);
     const getSynopsis = document.querySelector('.section-movie-db__info');
-    // console.log(getSynopsis);
 
+    // Give HTML the values from fetch
     getTitle.textContent = movieObject.title;
-    getPoster.src = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movieObject.movie_img}`  // 'https://images-na.ssl-images-amazon.com/images/I/716CVK84R6L._SX295_BO1,204,203,200_.gif';
-    // console.log(getPoster.src);
+    getPoster.src = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movieObject.movie_img}`; // 'https://images-na.ssl-images-amazon.com/images/I/716CVK84R6L._SX295_BO1,204,203,200_.gif';
     getDate.textContent = movieObject.release_date;
     getSynopsis.textContent = movieObject.synopsis;
-    
 }
-// fetchRequest("blade runner");
-
 
 // REDDIT API
 const redditBox = document.querySelector('#reddit-box') // container that comments go in
@@ -62,12 +53,13 @@ function fetchReddit(searchTerm) {
 }
 
 function makeRedditComment(authorContent, commentContent, unixTimeContent) {
+
     let container = makeNode('BLOCKQUOTE', 'a-class');
     container.appendChild(makeNode('P', 'comment-class', commentContent));
 
     let footer = makeNode('FOOTER', 'footer-class');
     footer.appendChild(makeNode('P', 'time-class', unixTimeContent));
-    footer.appendChild(makeNode('CITE', 'author-class', authorContent)); 
+    footer.appendChild(makeNode('CITE', 'author-class', authorContent));
 
 
     container.appendChild(footer);
@@ -81,6 +73,24 @@ function makeNode(type, className, content) { // this makes a node, gives it a c
     return node;
 }
 
+// SEARCH BAR 
+let movieForm = document.querySelector("#movie-form");
+let movieInput = document.querySelector("#movie-input");
+let submitBtn = document.querySelector("#movie-submit");
+
+submitBtn.addEventListener("click", submitMovie);
+
+// Grabs movie from movie-input and passes it through the fetch
+function submitMovie(event) {
+    //Resets comment section, consider changing innerHTML as its not good prac.
+    redditBox.innerHTML = "";
+
+    event.preventDefault();
+    // Call fetchReddit function and pass in movieInput as arguement
+    fetchReddit(movieInput.value)
+    // Call fetchRequest function and pass in movieInput as arguement
+    fetchRequest(movieInput.value);
+}
 
 
 
@@ -90,6 +100,10 @@ function makeNode(type, className, content) { // this makes a node, gives it a c
 
 
 
+
+
+
+// !!!!!---------Learning, No need to review (please do not delete)-----------!!!!!
 
 
 // Create a variable which will grab the VALUE in the search bar
