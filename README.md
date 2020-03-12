@@ -22,6 +22,8 @@ If not at least you'll see a glorious 404 error in the console.
 
 Life is good.
 
+They only ask that you look at one movie at a time. Greed is not an honourable trait in this realm.
+
 ---
 
 ### APIs
