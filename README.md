@@ -28,7 +28,7 @@ They only ask that you look at one movie at a time. Greed is not an honourable t
 
 ### APIs
 - [The Movie DataBase](https://developers.themoviedb.org/3/getting-started/introduction)
-- [Reddit](https://www.reddit.com/r/redditdev/comments/3zug2y/a_tool_for_searching_reddit_comments_and/)
+- [PushShift](https://pushshift.io/)
 
 ---
 
