@@ -1,3 +1,4 @@
+// MOVIE API
 function fetchRequest(movieName){
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=62b96ba98a33d55afab20dba768c38e2&query=${movieName}`)
     .then(response => {
@@ -27,23 +28,43 @@ function putInTheDom(movieObject){
     // Here we'll manipulate the DOM
     console.log(movieObject);
 }
-
 fetchRequest("blade runner");
 
-function fetchReddit(searchTerm) {
-    fetch(`https://api.pushshift.io/reddit/search/comment?q=${searchTerm}`)
-        .then(res => res.json())
-        .then(res => res.data.map(i => {
-            return {
-                user: i.author,
-                date: i.created_utc,
-                comment: i.body
-            }
-        }))
 
+// REDDIT API
+const redditBox = document.querySelector('#reddit-box') // container that comments go in
+
+function fetchReddit(searchTerm) {
+    fetch(`https://api.pushshift.io/reddit/search/comment?q=${searchTerm}`) // gets api data according to argument it is called with
+        .then(res => res.json()) // converts to JSON
+        .then(res => { // returns an object contining one key-value pair. Key is called data, and value is an array.
+            res.data.forEach(element => { // for each element in the array we do two things.
+                comment = makeRedditComment(element.author, element.body, element.created_utc); // firstly we make a html element called 'blockquote' (see below)
+                redditBox.appendChild(comment); // secondly we add that element onto the redditBox container
+            });
+        })
+}
+fetchReddit("kat");
+
+function makeRedditComment(authorContent, commentContent, unixTimeContent) {
+    let container = makeNode('BLOCKQUOTE', 'a-class');
+    container.appendChild(makeNode('P', 'comment-class', commentContent));
+
+    let footer = makeNode('FOOTER', 'footer-class');
+    footer.appendChild(makeNode('P', 'time-class', unixTimeContent));
+    footer.appendChild(makeNode('CITE', 'author-class', authorContent)); 
+
+
+    container.appendChild(footer);
+    return container;
 }
 
-fetchReddit("kat");
+function makeNode(type, className, content) { // this makes a node, gives it a class, adds text content to the class, and then it returns the node so that the function that calls makeNode can use the node from makeNode. Sometimes, we want to use this function to create a node that contains other nodes, rather than contains text. When we do that, we only pass it two arguments. This means that it treats content as undefined, so it doesn't assign any new content :)
+    let node = document.createElement(type);
+    node.classList.add(className);
+    node.textContent = content;
+    return node;
+}
 
 // Create a variable which will grab the VALUE in the search bar
 // const getUserInput = // add event listener here
