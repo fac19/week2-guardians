@@ -54,7 +54,7 @@ function fetchReddit(searchTerm) {
 
 function makeRedditComment(authorContent, commentContent, unixTimeContent) {
     let dateContent = new Date(unixTimeContent * 1000);
-    dateContent = [dateContent.getDate(), dateContent.getMonth(), dateContent.getFullYear()].join(", ");
+    dateContent = [dateContent.getDate(), dateContent.getMonth(), dateContent.getFullYear()].join("/");
     
     let container = makeNode('BLOCKQUOTE', 'a-class');
     container.appendChild(makeNode('P', 'comment-class', commentContent));
