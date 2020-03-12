@@ -50,11 +50,11 @@ Week 2 Learning Objectives can be found [here](https://founders-and-coders.gitbo
 
 ## Agreed Numbering Tags
 
-E0 Simplest task 
-E1 Simple exercise 
-E3 Relatively easy challenge (~1/4 day)
-E5 Know how to do but takes some thinking (~1/2 day)
-E8 Challenging. May require a technical spike (~1day)
+- E0 Simplest task 
+- E1 Simple exercise 
+- E3 Relatively easy challenge (~1/4 day)
+- E5 Know how to do but takes some thinking (~1/2 day)
+- E8 Challenging. May require a technical spike (~1day)
 
 ---
 
