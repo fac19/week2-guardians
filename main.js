@@ -13,6 +13,7 @@ function fetchRequest(movieName){
         // so we don't have to do it in the then promise
         // We thought it would be easier to pass through this information as an object, 
         // rather than an array and extract the information we require
+        // console.log(firstResult);
         putInTheDom({
             title: firstResult.original_title,
             movie_img: firstResult.poster_path,
@@ -27,8 +28,23 @@ function fetchRequest(movieName){
 function putInTheDom(movieObject){
     // Here we'll manipulate the DOM
     console.log(movieObject);
+    const getTitle = document.querySelector('.section-movie-db__title');
+    // console.log(getTitle);
+    const getPoster = document.querySelector('.section-movie-db__poster');
+    // console.log(getPoster);
+    const getDate = document.querySelector('.section-movie-db__date');
+    // console.log(getDate);
+    const getSynopsis = document.querySelector('.section-movie-db__info');
+    // console.log(getSynopsis);
+
+    getTitle.textContent = movieObject.title;
+    getPoster.src = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movieObject.movie_img}`  // 'https://images-na.ssl-images-amazon.com/images/I/716CVK84R6L._SX295_BO1,204,203,200_.gif';
+    // console.log(getPoster.src);
+    getDate.textContent = movieObject.release_date;
+    getSynopsis.textContent = movieObject.synopsis;
+    
 }
-fetchRequest("blade runner");
+// fetchRequest("blade runner");
 
 
 // REDDIT API
@@ -64,6 +80,17 @@ function makeNode(type, className, content) { // this makes a node, gives it a c
     node.textContent = content;
     return node;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // Create a variable which will grab the VALUE in the search bar
 // const getUserInput = // add event listener here

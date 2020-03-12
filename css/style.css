@@ -30,19 +30,19 @@ section {
 }
 
 
-.movie-box {
+.section-movie-db {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-.movie-box__title {
+.section-movie-db__title {
     text-align: center;
     font-size: 4rem;
     margin: 0;
 }
 
-.movie-box__year {
+.section-movie-db__date {
     text-align: center;
     font-size: 2rem;
     margin: 0;
@@ -55,7 +55,7 @@ section {
     grid-row-end: 3;
 }
 
-.movie-box__image {
+.section-movie-db__poster {
     max-height: 100%;
     width: 100%;
     grid-column: 2;
