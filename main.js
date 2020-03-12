@@ -42,9 +42,9 @@ function putInTheDom(movieObject) {
 const redditBox = document.querySelector('#reddit-box') // container that comments go in
 
 function fetchReddit(searchTerm) {
-    fetch(`https://api.pushshift.io/reddit/search/comment?q=${searchTerm}`) // gets api data according to argument it is called with
+    fetch(`https://api.pushshift.io/reddit/search/comment?q=${searchTerm}&subreddit=movies`) // gets api data according to argument it is called with
         .then(res => res.json()) // converts to JSON
-        .then(res => { // returns an object contining one key-value pair. Key is called data, and value is an array.
+        .then(res => {// returns an object contining one key-value pair. Key is called data, and value is an array.
             res.data.forEach(element => { // for each element in the array we do two things.
                 comment = makeRedditComment(element.author, element.body, element.created_utc); // firstly we make a html element called 'blockquote' (see below)
                 redditBox.appendChild(comment); // secondly we add that element onto the redditBox container
