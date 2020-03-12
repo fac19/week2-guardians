@@ -1,32 +1,3 @@
-// This is a GREAT example
-
-// function fetchRequest(movieName){
-//     let object = {};
-//     fetch(`https://api.themoviedb.org/3/search/movie?api_key=62b96ba98a33d55afab20dba768c38e2&query=${movieName}`) //replace Jack Reacher with parameter
-//     .then(response => {
-//         if (response.ok !== true) throw new Error(response.status)
-//         return response.json()
-//     })
-//     // .then(data => console.log(data.results[0]))
-//     .then(data => {
-//         object = data;
-//         let firstResult = data.results[0];
-//         putInTheDom({
-//             title: firstResult.original_title,
-//             movie_img: firstResult.poster_path,
-//             release_date: firstResult.release_date,
-//             synopsis: firstResult.overview
-//         });
-//     })
-//     .catch(error => console.log(error))
-
-//     setTimeout(() => {
-//         console.log(object)
-//     }, 1000);
-
-// };
-
-
 function fetchRequest(movieName){
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=62b96ba98a33d55afab20dba768c38e2&query=${movieName}`)
     .then(response => {
@@ -93,3 +64,34 @@ fetchReddit("kat");
 //     .then(data => console.log(data))
 //     // If it messes up catch it and console the error
 //     .catch(error => console.error(error) 
+
+
+
+
+// This is a GREAT example
+
+// function fetchRequest(movieName){
+//     let object = {};
+//     fetch(`https://api.themoviedb.org/3/search/movie?api_key=62b96ba98a33d55afab20dba768c38e2&query=${movieName}`) //replace Jack Reacher with parameter
+//     .then(response => {
+//         if (response.ok !== true) throw new Error(response.status)
+//         return response.json()
+//     })
+//     // .then(data => console.log(data.results[0]))
+//     .then(data => {
+//         object = data;
+//         let firstResult = data.results[0];
+//         putInTheDom({
+//             title: firstResult.original_title,
+//             movie_img: firstResult.poster_path,
+//             release_date: firstResult.release_date,
+//             synopsis: firstResult.overview
+//         });
+//     })
+//     .catch(error => console.log(error))
+
+//     setTimeout(() => {
+//         console.log(object)
+//     }, 1000);
+
+// };
