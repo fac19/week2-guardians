@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/a7798e1ba0.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -16,31 +18,27 @@
     <main>
 
         <form id="movie-form" class="movie-form" action="">
-            <label for="">
                 <input id="movie-input" class="movie-form__input " type="text">
-                <button type="submit" id="movie-submit" class="movie-form__submit">Submit</button>
-            </label>
+                <button type="submit" id="movie-submit" class="movie-form__submit"><i class="fas fa-search"></i></button>
         </form>
 
-        <section class="section section--card--movie">
-            <h2>Movie Title</h2>
-            <img src="" alt="">
-            <h3>Title</h3>
-            <h3>Year</h3>
-            <h3>Genre</h3>
-            <h3>Director</h3>
-            <h3>Cast</h3>
+        <section class="movie-box">
+            <img class="movie-box__image" src="https://www.mauvais-genres.com/27765-thickbox_default/joker-original-movie-poster-15x20-in-2019-joaquin-phoenix.jpg" alt="">
+            <div class="movie-box__content">
+                <h3 class="movie-box__title">Title</h3>
+                <h3 class="movie-box__year">Year</h3>
+                <h3 class="movie-box__synopsis">Synopsis</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit tenetur similique est laborum id, neque nihil saepe sint, dignissimos ducimus excepturi, odit quod sunt debitis deserunt. Pariatur, ipsam! Ea, earum.lorem</p>
+            </div>
         </section>
 
-        <section id="reddit-box" class="section section--card--reddit">
-            <h2>Reddit Comments</h2>
+        <h2 class="reddit-box__title">This on Reddit...</h2>
+        <section id="reddit-box" class="reddit-box">
         </section>
     </main>
 
     <footer class="footer footer--theme">
-        <ul>
-            <li>Link</li>
-        </ul>
+        <p>A production of Team Guardians</p>
     </footer>
 
     <script src="./main.js"></script>

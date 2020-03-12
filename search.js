@@ -4,7 +4,7 @@ let submitBtn = document.querySelector("#movie-submit");
 //submitBtn.preventDefault();
 
 function submitMovie(event) {
-    console.log(fetchReddit(movieInput.value));
+    fetchReddit(movieInput.value);
     event.preventDefault();
     //console.log(event.target);
 
