@@ -38,10 +38,14 @@ The design criteria can be found [here](https://github.com/foundersandcoders/cou
 ---
 
 ## Improvements
+* Hide API key 
+### Accessibility
 * Add Aria labels
 * Improve contrast for accessibility 
 * Add descriptive label to button
-* Hide API key 
+
+### Functionality
+* Instead of movie.input being past through the reddit fetch, maybe make it the movie DB title 
 
 ---
 
@@ -69,7 +73,9 @@ Week 2 Learning Objectives can be found [here](https://founders-and-coders.gitbo
 
 ### Kat
 - Understand how to use and implament API's
-- Better at readinig the API Documentation-
+- Better at readinig the API Documentation
+- Improve comunication skill when explaining code
+- Feel comfortable with working remote (hangout, VS live share, slack)
 
 ### Lizzy
 - Learn how the Fetch API works and use it to display the data we want
@@ -154,6 +160,11 @@ https://www.reddit.com/r/redditdev/comments/3zug2y/a_tool_for_searching_reddit_c
 - Pub finder
 - Corp. jardon
 - Eff off
+
+---
+
+## Original Plan
+![](https://i.imgur.com/iFv1Olc.jpg)
 
 ---
 
