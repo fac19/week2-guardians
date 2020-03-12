@@ -1,13 +1,29 @@
 * {
     box-sizing: border-box;
+    font-family: Roboto, sans-serif;
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
+    background-color: #f1f3f4;
+    max-width: 900px;
 }
 
-section {
-    max-height: 70vh;
+main {
+    margin: 10px;
+}
+
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #79bac1;
+}
+
+.intro-text {
+    color: #512b58;
+    font-size: 1.25em;
+    text-align: center;
 }
 
 .movie-form {
@@ -15,7 +31,6 @@ section {
     grid-template-columns: 7fr 1fr;
     grid-template-rows: 1fr;
     padding: 1.5vh;
-    margin-bottom: 2.5vh
 }
 
 .movie-form__input {
@@ -31,46 +46,39 @@ section {
 
 
 .section-movie-db {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    color: #512b58;
 }
 
 .section-movie-db__title {
     text-align: center;
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 0;
+    color:
 }
 
 .section-movie-db__date {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
     font-style: italic;
 }
 
-.movie-box__content {
-    grid-column: 1;
-    grid-row-start: 1;
-    grid-row-end: 3;
-}
-
 .section-movie-db__poster {
-    max-height: 100%;
-    width: 100%;
-    grid-column: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    max-height: 25%;
 }
 
 .reddit-box {
-
+    margin-top: 30px;
+    text-align: center;
     overflow-x: scroll;
 }
 
 .a-class {
-    background-color: aquamarine;
-    margin: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px 0;
     padding: 10px;
 }
 
@@ -79,8 +87,12 @@ section {
     justify-content: space-between;
 }
 
-.footer {
+/* .footer {
     background-color: black;
     color: white;
     height: 50px;
-}
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+} */
