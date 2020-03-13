@@ -53,12 +53,14 @@ function fetchReddit(searchTerm) {
 }
 
 function makeRedditComment(authorContent, commentContent, unixTimeContent) {
-
+    let dateContent = new Date(unixTimeContent * 1000);
+    dateContent = [dateContent.getDate(), dateContent.getMonth(), dateContent.getFullYear()].join("/");
+    
     let container = makeNode('BLOCKQUOTE', 'a-class');
     container.appendChild(makeNode('P', 'comment-class', commentContent));
 
     let footer = makeNode('FOOTER', 'footer-class');
-    footer.appendChild(makeNode('P', 'time-class', unixTimeContent));
+    footer.appendChild(makeNode('P', 'time-class', dateContent));
     footer.appendChild(makeNode('CITE', 'author-class', authorContent));
 
 
