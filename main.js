@@ -26,16 +26,16 @@ function fetchRequest(movieName) {
 //Created a separate function for DOM manipulation to make code easier to read
 function putInTheDom(movieObject) {
     // Dom Manipulation
-    const getTitle = document.querySelector('.section-movie-db__title');
-    const getPoster = document.querySelector('.section-movie-db__poster');
-    const getDate = document.querySelector('.section-movie-db__date');
-    const getSynopsis = document.querySelector('.section-movie-db__info');
+    const title = document.querySelector('.section-movie-db__title');
+    const poster = document.querySelector('.section-movie-db__poster');
+    const date = document.querySelector('.section-movie-db__date');
+    const synopsis = document.querySelector('.section-movie-db__info');
 
     // Give HTML the values from fetch
-    getTitle.textContent = movieObject.title;
-    getPoster.src = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movieObject.movie_img}`; // 'https://images-na.ssl-images-amazon.com/images/I/716CVK84R6L._SX295_BO1,204,203,200_.gif';
-    getDate.textContent = movieObject.release_date;
-    getSynopsis.textContent = movieObject.synopsis;
+    title.textContent = movieObject.title;
+    poster.src = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movieObject.movie_img}`; // 'https://images-na.ssl-images-amazon.com/images/I/716CVK84R6L._SX295_BO1,204,203,200_.gif';
+    date.textContent = movieObject.release_date;
+    synopsis.textContent = movieObject.synopsis;
 }
 
 // REDDIT API
@@ -56,15 +56,15 @@ function makeRedditComment(authorContent, commentContent, unixTimeContent) {
     let dateContent = new Date(unixTimeContent * 1000);
     dateContent = [dateContent.getDate(), dateContent.getMonth(), dateContent.getFullYear()].join("/");
     
-    let container = makeNode('BLOCKQUOTE', 'a-class');
-    container.appendChild(makeNode('P', 'comment-class', commentContent));
+    let container = makeNode('BLOCKQUOTE', 'reddit-box__post');
+    container.appendChild(makeNode('P', 'reddit-box__comment', commentContent));
 
-    let footer = makeNode('FOOTER', 'footer-class');
-    footer.appendChild(makeNode('P', 'time-class', dateContent));
-    footer.appendChild(makeNode('CITE', 'author-class', authorContent));
+    let redditPostFooter = makeNode('FOOTER', 'reddit-box__footer');
+    redditPostFooter.appendChild(makeNode('P', 'reddit-box__time', dateContent));
+    redditPostFooter.appendChild(makeNode('CITE', '.reddit-box__author', authorContent));
 
 
-    container.appendChild(footer);
+    container.appendChild(redditPostFooter);
     return container;
 }
 
