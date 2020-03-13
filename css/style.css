@@ -17,7 +17,7 @@ main {
 h1 {
     font-size: 3em;
     text-align: center;
-    color: #79bac1;
+    color: #230444;
 }
 
 .intro-text {
@@ -29,11 +29,11 @@ h1 {
 .movie-form {
     display: grid;
     grid-template-columns: 7fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: fr;
     padding: 1.5vh;
 }
 
-.movie-form__input {
+ .movie-form__input {
     grid-column: 1;
 }
 
@@ -85,13 +85,3 @@ h1 {
     display: flex;
     justify-content: space-between;
 }
-
-/* .footer {
-    background-color: black;
-    color: white;
-    height: 50px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-} */
