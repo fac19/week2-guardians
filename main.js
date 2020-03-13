@@ -56,15 +56,15 @@ function makeRedditComment(authorContent, commentContent, unixTimeContent) {
     let dateContent = new Date(unixTimeContent * 1000);
     dateContent = [dateContent.getDate(), dateContent.getMonth(), dateContent.getFullYear()].join("/");
     
-    let container = makeNode('BLOCKQUOTE', 'a-class');
-    container.appendChild(makeNode('P', 'comment-class', commentContent));
+    let container = makeNode('BLOCKQUOTE', 'reddit-box__post');
+    container.appendChild(makeNode('P', 'reddit-box__comment', commentContent));
 
-    let footer = makeNode('FOOTER', 'footer-class');
-    footer.appendChild(makeNode('P', 'time-class', dateContent));
-    footer.appendChild(makeNode('CITE', 'author-class', authorContent));
+    let redditPostFooter = makeNode('FOOTER', 'reddit-box__footer');
+    redditPostFooter.appendChild(makeNode('P', 'reddit-box__time', dateContent));
+    redditPostFooter.appendChild(makeNode('CITE', '.reddit-box__author', authorContent));
 
 
-    container.appendChild(footer);
+    container.appendChild(redditPostFooter);
     return container;
 }
 
