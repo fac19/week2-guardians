@@ -7,19 +7,21 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a7798e1ba0.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Movie Review Generator</title>
 </head>
 
 <body>
 
-    <h1>Movie Review Generator</h1>
+    <h1 aria-label="page title">Movie Review Generator</h1>
     <p class="intro-text">See what people are saying about a movie.</p>
 
     <main>
 
-        <form id="movie-form" class="movie-form" action="">
-                <input id="movie-input" class="movie-form__input " type="text">
-                <button type="submit" id="movie-submit" class="movie-form__submit"><i class="fas fa-search"></i></button>
+        <form id="movie-form" aria-label="search bar" action="">
+            <label class="movie-form">
+                <input id="movie-input" class="movie-form__input" type="text">
+                <button type="submit" id="movie-submit" class="movie-form__submit" aria-label="submit"><i class="fas fa-search"></i></button>
+            </label>
         </form>
 
         <section class="section-movie-db">
@@ -33,10 +35,6 @@
         <h2 class="reddit-box__title">This on Reddit...</h2>
         </section>
     </main>
-
-    <!-- <footer class="footer footer--theme">
-        <p>A production of Team Guardians</p>
-    </footer> -->
 
     <script src="./main.js"></script>
 
