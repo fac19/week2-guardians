@@ -76,14 +76,15 @@ function makeNode(type, className, content) { // this makes a node, gives it a c
 }
 
 // SEARCH BAR 
-let movieForm = document.querySelector("#movie-form");
-let movieInput = document.querySelector("#movie-input");
-let submitBtn = document.querySelector("#movie-submit");
+const movieForm = document.querySelector("#movie-form");
+const movieInput = document.querySelector("#movie-input");
+const submitBtn = document.querySelector("#movie-submit");
 
 submitBtn.addEventListener("click", submitMovie);
 
 // Grabs movie from movie-input and passes it through the fetch
 function submitMovie(event) {
+    if (!movieInput.value) { return }
     //Resets comment section, consider changing innerHTML as its not good prac.
     redditBox.innerHTML = "";
 
